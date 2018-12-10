@@ -10,7 +10,8 @@ public class BruteRasterImage extends RasterImage implements Image {
     int width;
     int height;
 
-    public BruteRasterImage(Color color, int width, int height){
+    public BruteRasterImage(Color color, int width, int height) {
+        super(color,width,height);
         this.width = width;
         this.height = height;
         colors = new Color[width][height];
@@ -21,15 +22,10 @@ public class BruteRasterImage extends RasterImage implements Image {
         }
     }
 
+
+
     public BruteRasterImage(Color[][] colors){
-        this.width = Matrices.getRowCount(colors);
-        this.height = Matrices.getColumnCount(colors);
-        this.colors = new Color[width][height];
-        for(int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                this.colors[i][j] = colors[i][j];
-            }
-        }
+        super(colors);
     }
 
 
@@ -37,11 +33,11 @@ public class BruteRasterImage extends RasterImage implements Image {
         colors = new Color[width][height];
     }
 
+
     public void setPixelColor(Color color, int x, int y){
         colors[x][y] = color;
     }
 
-    @Override
     public Color getPixelColor(int x, int y) {
         return colors[x][y];
     }
@@ -54,7 +50,7 @@ public class BruteRasterImage extends RasterImage implements Image {
         }
     }
 
-    private void setPixelsColor(Color color) {
+    public void setPixelsColor(Color color) {
         for(int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 this.colors[i][j] = color;
@@ -62,21 +58,6 @@ public class BruteRasterImage extends RasterImage implements Image {
         }
     }
 
-    @Override
-    public int getWidth() {
-        return width;
-    }
 
-    @Override
-    public int getHeight() {
-        return height;
-    }
 
-    protected void setWidth(int width) {
-        this.width = width;
-    }
-
-    protected void setHeight(int height) {
-        this.height = height;
-    }
 }
