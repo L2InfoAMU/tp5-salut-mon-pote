@@ -3,11 +3,14 @@ package image;
 import javafx.scene.paint.Color;
 import util.Matrices;
 
-public abstract class RasterImage {
+import java.util.List;
 
+public abstract class RasterImage {
+    Color[][] colors;
     int width;
     int height;
-
+    List<Color> palette;
+    int[][] indexesOfColors;
 
     public RasterImage(Color color, int width, int height) {
         setWidth(width);
