@@ -5,7 +5,7 @@ import util.Matrices;
 /**
  * Created by EDELMANN Matthieu and CHARRIN Kevin on 26/11/2018.
  */
-public class BruteRasterImage implements Image {
+public class BruteRasterImage extends RasterImage implements Image {
     Color[][] colors;
     int width;
     int height;
