@@ -5,12 +5,10 @@ import util.Matrices;
 
 import java.util.List;
 
-public abstract class RasterImage {
-    Color[][] colors;
+public abstract class RasterImage implements Image {
     int width;
     int height;
-    List<Color> palette;
-    int[][] indexesOfColors;
+
 
     public RasterImage(Color color, int width, int height) {
         setWidth(width);

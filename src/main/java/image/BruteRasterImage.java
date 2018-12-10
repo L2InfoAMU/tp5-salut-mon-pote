@@ -9,6 +9,9 @@ import java.util.List;
  */
 public class BruteRasterImage extends RasterImage implements Image {
 
+    Color[][] colors;
+    int width;
+    int height;
 
 
 

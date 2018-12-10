@@ -9,7 +9,10 @@ public class PaletteRasterImage extends RasterImage implements Image {
 
     /** Arguments */
 
-
+    List<Color> palette;
+    int[][] indexesOfColors;
+    int width;
+    int height;
 
 
     /** Constructeurs */
